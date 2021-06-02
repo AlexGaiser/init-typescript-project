@@ -1,0 +1,41 @@
+{
+  "name": "init-typescript-project",
+  "version": "0.0.1",
+  "description": "A command line tool for initializing a custom typescript project. Builds a simple project from a template with eslint, prettier, and jest set up for use with TS and ready to go.",
+  "main": "dist/cli.js",
+  "scripts": {
+    "test": "jest",
+    "run:dev": "export NODE_ENV=development && node dist/cli.js",
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 -a lib/templates/**/* dist",
+    "build": "npm run clean && tsc && npm run copy-files"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexGaiser/init-typescript-project.git"
+  },
+  "bin": {
+    "itp": "dist/cli.js"
+  },
+  "keywords": [
+    "CLI",
+    "Typescript",
+    "productivity",
+    "easy",
+    "tool"
+  ],
+  "author": "Alex Gaiser",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexGaiser/init-typescript-project/issues"
+  },
+  "homepage": "https://github.com/AlexGaiser/init-typescript-project#readme",
+  "dependencies": {
+    "yargs": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/yargs": "^17.0.0",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^3.0.2"
+  }
+}
