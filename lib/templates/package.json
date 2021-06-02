@@ -6,10 +6,7 @@
   "scripts": {
     "test": "jest",
     "watch": "tsc --watch",
-    "start:dev": "tsc && node dist/cli.js",
-    "clean": "rimraf dist/",
-    "copy-files": "copyfiles -u 1 -a lib/templates/**/* dist",
-    "build": "npm run clean && tsc && npm run copy-files"
+    "start:dev": "tsc && node dist/cli.js"
   },
   "repository": {
     "type": "git",
