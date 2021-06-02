@@ -1,5 +1,0 @@
-build/
-.gitignore
-jest.config.js
-scripts/
-node_modules/
