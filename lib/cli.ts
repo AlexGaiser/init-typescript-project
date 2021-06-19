@@ -11,9 +11,11 @@ import {
 } from "./services/utils.service";
 import { Options } from "./types/types";
 import devDependencies from "./configs/devDependencies";
+import { getArgs } from "./services/args.service";
 
-const args = process.argv.slice(2);
+const args = getArgs(process.argv.slice(2)).argv;
 
+console.log(args);
 const name = args[0];
 
 const userOptions: Options = { name };
