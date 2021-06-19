@@ -5,10 +5,14 @@
   "main": "dist/cli.js",
   "scripts": {
     "test": "jest",
-    "run:dev": "export NODE_ENV=development && node dist/cli.js",
+    "watch": "tsc --watch",
+    "watch:dev": "export NODE_ENV=development && npm run watch",
+    "run:dev-build": "export NODE_ENV=development && npm run build && node dist/cli.js",
+    "run:dev": "export NODE_ENV=development && export NO_INSTALL=true && node dist/cli.js",
     "clean": "rimraf dist/",
     "copy-files": "copyfiles -u 1 -a lib/templates/**/* dist",
-    "build": "npm run clean && tsc && npm run copy-files"
+    "build": "npm run clean && tsc && npm run copy-files",
+    "cleancopy": "npm run clean && npm run copy-files"
   },
   "repository": {
     "type": "git",

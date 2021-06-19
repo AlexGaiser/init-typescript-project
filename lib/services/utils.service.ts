@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
+
 export const writeFile =
   (
     extension: string,
@@ -19,6 +20,12 @@ export const writeObjectToJSONFile = writeFile("json", (content) =>
 export const loadJSONTemplateFiles = (dir: string) => {
   const files = fs.readdirSync(dir);
   return files.filter((a) => a.match(/.template.json/gm));
+};
+
+export const mkDir = (...dirPath: string[]) => {
+  if (!fs.existsSync(path.join(...dirPath))) {
+    fs.mkdirSync(path.join(...dirPath));
+  }
 };
 
 export const copyDir = (copyDir: string, targetDir: string): void => {

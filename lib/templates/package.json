@@ -1,12 +1,12 @@
 {
   "name": "init-typescript-project",
   "version": "0.0.1",
-  "description": "A command line tool for initializing a custom typescript project. Builds a simple project from a template with eslint, prettier, and jest set up for use with TS and ready to go.",
-  "main": "dist/cli.js",
+  "description": "This project was built with Init-Typescript-Project",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "watch": "tsc --watch",
-    "start:dev": "tsc && node dist/cli.js"
+    "start:dev": "tsc && node dist/index.js"
   },
   "repository": {
     "type": "git",
