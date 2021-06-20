@@ -1,10 +1,12 @@
-import * as fs from "fs";
-import * as path from "path";
+import * as fs from 'fs';
+import * as path from 'path';
 
 export const writeFile =
   (
     extension: string,
-    transform?: <T = any>(contents: T) => string | NodeJS.ArrayBufferView
+    transform: <T = any>(
+      contents: T,
+    ) => string | NodeJS.ArrayBufferView = <T>(contents) => contents,
   ) =>
   (contents: any, filePath: string, fileName: string) => {
     const transformedContents = transform(contents);
@@ -13,8 +15,8 @@ export const writeFile =
     fs.writeFileSync(targetDir, transformedContents);
     return transformedContents;
   };
-export const writeObjectToJSONFile = writeFile("json", (content) =>
-  JSON.stringify(content, null, 2)
+export const writeObjectToJSONFile = writeFile('json', (content) =>
+  JSON.stringify(content, null, 2),
 );
 
 export const loadJSONTemplateFiles = (dir: string) => {
@@ -31,16 +33,17 @@ export const mkDir = (...dirPath: string[]) => {
 export const copyDir = (copyDir: string, targetDir: string): void => {
   const files = fs.readdirSync(path.resolve(__dirname, copyDir));
 
-  for (let file of files) {
+  for (const file of files) {
     fs.copyFileSync(
       path.resolve(__dirname, copyDir, file),
-      path.resolve(targetDir, file)
+      path.resolve(targetDir, file),
     );
     console.log(
-      `copied from ${path.resolve(__dirname, copyDir, file)} to ${path.resolve(
-        targetDir,
-        file
-      )}`
+      `copied from ${path.resolve(
+        __dirname,
+        copyDir,
+        file,
+      )} to ${path.resolve(targetDir, file)}`,
     );
   }
 };

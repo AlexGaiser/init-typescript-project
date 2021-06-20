@@ -1,17 +1,18 @@
-export type Options = {
+export interface Options extends Object {
   name: string;
   projectDir?: string;
   entryPoint?: string;
-};
+}
 
 export interface ReadOnlyOptions extends Readonly<Options> {}
 
-type OptionSetting = {
-  type: string;
+export type OptionSetting = {
+  type: 'boolean' | 'number' | 'string';
   default?: any;
-  demandOption: boolean;
+  demandOption?: boolean;
   choices?: string[];
   alias?: string;
+  name: string;
 };
 
 export type OptionConfig = {

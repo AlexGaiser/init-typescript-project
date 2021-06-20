@@ -1,8 +1,24 @@
-import { OptionConfig } from "../types/types";
+import { OptionConfig } from '../types/types';
 
 const optionConfig: OptionConfig = {
-  name: { alias: "n", type: "string", demandOption: true },
-  projectDir: { alias: "dir", type: "string", demandOption: false },
+  name: {
+    name: 'n',
+    alias: 'name',
+    type: 'string',
+    demandOption: true,
+  },
+  projectDir: {
+    name: 'd',
+    alias: 'dir',
+    type: 'string',
+    demandOption: false,
+  },
+  entryPoint: {
+    name: 'f',
+    alias: 'file',
+    type: 'string',
+    demandOption: false,
+  },
 };
 
 export default optionConfig;
