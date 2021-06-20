@@ -26,7 +26,7 @@ export const loadJSONTemplateFiles = (dir: string) => {
 
 export const mkDir = (...dirPath: string[]) => {
   if (!fs.existsSync(path.join(...dirPath))) {
-    fs.mkdirSync(path.join(...dirPath));
+    fs.mkdirSync(path.join(...dirPath), { recursive: true });
   }
 };
 

@@ -15,14 +15,10 @@ import devDependencies from './configs/devDependencies';
 import { getArgs, getArgValues } from './services/args.service';
 
 const args = getArgs(process.argv.slice(2)).argv;
-console.log('args', args);
 const options: Options = getArgValues(process.argv.slice(2));
-console.log('options', options);
 // process.exit();
-
+mkDir(options.projectDir);
 const packageJSON = packageJSONTemplate;
-
-console.log('testing new  scripts');
 
 copyDir(path.resolve(__dirname, './templates'), options.projectDir);
 

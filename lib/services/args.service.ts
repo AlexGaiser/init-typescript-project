@@ -43,10 +43,12 @@ const yargsOpts: YargsOptions = mapToYargs(optionsMap);
 
 const mapYargsToOptions = (options: Argv): Options => {
   const argv = options.argv;
+  // @ts-ignore
   if (typeof argv._[0] !== 'string' && argv._.length > 0) {
     throw new Error('First argument must be string or left blank');
   }
   const outOpts: Options = {
+    // @ts-ignore
     name: argv._[0],
   };
 

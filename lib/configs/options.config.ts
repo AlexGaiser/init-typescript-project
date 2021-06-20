@@ -1,6 +1,6 @@
 import { OptionConfig } from '../types/types';
 
-const optionConfig: OptionConfig = {
+const optionConfig: OptionConfig = <OptionConfig>{
   name: {
     name: 'n',
     alias: 'name',
