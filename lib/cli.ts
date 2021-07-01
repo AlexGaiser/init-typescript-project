@@ -12,28 +12,30 @@ import {
 } from './services/utils.service';
 import { Options } from './types/types';
 import devDependencies from './configs/devDependencies';
-import { getArgs, getArgValues } from './services/args.service';
+import { getArgValues } from './services/args.service';
 
-const args = getArgs(process.argv.slice(2)).argv;
 const options: Options = getArgValues(process.argv.slice(2));
-// process.exit();
 mkDir(options.projectDir);
 const packageJSON = packageJSONTemplate;
 
 copyDir(path.resolve(__dirname, './templates'), options.projectDir);
 
 packageJSON.name = options.name;
-
+packageJSON.main = `${options.entryPoint}`;
 writeObjectToJSONFile(packageJSON, options.projectDir, 'package');
 
 // creating tests directory
 mkDir(options.projectDir, '__tests__');
 
 // creating lib directory
-mkDir(options.projectDir, 'lib');
+mkDir(options.projectDir, options.sourceDir);
 
 // writing entry point
-writeFile('ts')('', `${options.projectDir}/lib`, options.entryPoint);
+writeFile('ts')(
+  '',
+  `${options.projectDir}/${options.sourceDir}`,
+  options.entryPoint,
+);
 
 console.log('Installing the following dev dependencies:');
 

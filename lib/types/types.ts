@@ -1,7 +1,8 @@
 export interface Options extends Object {
   name: string;
-  projectDir?: string;
-  entryPoint?: string;
+  projectDir: string;
+  entryPoint: string;
+  sourceDir: string;
 }
 
 export interface ReadOnlyOptions extends Readonly<Options> {}

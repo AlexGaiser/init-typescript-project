@@ -19,6 +19,12 @@ const optionConfig: OptionConfig = <OptionConfig>{
     type: 'string',
     demandOption: false,
   },
+  sourceDir: {
+    name: 'sd',
+    alias: 'srcDir',
+    type: 'string',
+    demandOption: false,
+  },
 };
 
 export default optionConfig;
