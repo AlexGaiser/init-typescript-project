@@ -72,7 +72,6 @@ const mapYargsToOptions = (options: Argv): Options => {
 
 export const getArgs = (args: string[]): Argv => {
   const yargsOut = yargs(args).options(yargsOpts);
-  console.log(yargsOut.argv);
   return yargsOut;
 };
 
