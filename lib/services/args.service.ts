@@ -46,7 +46,6 @@ const mapToYargs = (options: OptionConfig): YargsOptions => {
 };
 
 const yargsOpts: YargsOptions = mapToYargs(optionsMap);
-console.log(yargsOpts);
 const mapYargsToOptions = (options: Argv): Options => {
   const argv = options.argv;
   // @ts-ignore
