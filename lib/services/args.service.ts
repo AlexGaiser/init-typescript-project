@@ -70,15 +70,12 @@ const mapYargsToOptions = (options: Argv): Options => {
   }, <Options>outOpts);
 };
 
-export const getArgs = (args: string[]): Argv => {
-  const yargsOut = yargs(args).options(yargsOpts);
+const getArgs = (args: string[], options: YargsOptions): Argv => {
+  const yargsOut = yargs(args).options(options);
   return yargsOut;
 };
 
-export const getOptions = (args: Argv): Options => {
-  return mapYargsToOptions(args);
-};
-
 export const getArgValues = (args: string[]): Options => {
-  return mapYargsToOptions(getArgs(args));
+  console.log(args);
+  return mapYargsToOptions(getArgs(args, yargsOpts));
 };
