@@ -1,21 +1,27 @@
 import yargs, { Options as YOptions, Argv } from 'yargs';
 import defaultOptions from '../configs/default.config';
 import optionConfig from '../configs/options.config';
-import { OptionConfig, OptionSetting, Options } from '../types/types';
+import {
+  OptionConfig,
+  OptionSetting,
+  Options,
+  PartialOpts,
+  ReadOnlyOptions,
+} from '../types/types';
 
 interface YargsOptions {
   [key: string]: YOptions;
 }
 
 const mapOptions = (
-  defaultOptions,
+  defaultOptions: ReadOnlyOptions,
   options: OptionConfig,
 ): OptionConfig => {
   return Object.keys(options).reduce(
     (opts: OptionConfig, val: string) => {
       opts[val] = options[val];
 
-      if (defaultOptions[val]) {
+      if (defaultOptions[val] !== undefined) {
         opts[val].default = defaultOptions[val];
       }
       return opts;
@@ -40,14 +46,14 @@ const mapToYargs = (options: OptionConfig): YargsOptions => {
 };
 
 const yargsOpts: YargsOptions = mapToYargs(optionsMap);
-
+console.log(yargsOpts);
 const mapYargsToOptions = (options: Argv): Options => {
   const argv = options.argv;
   // @ts-ignore
   if (typeof argv._[0] !== 'string' && argv._.length > 0) {
     throw new Error('First argument must be string or left blank');
   }
-  const outOpts: Options = {
+  const outOpts: PartialOpts = {
     // @ts-ignore
     name: argv._[0],
   };
@@ -67,6 +73,7 @@ const mapYargsToOptions = (options: Argv): Options => {
 
 export const getArgs = (args: string[]): Argv => {
   const yargsOut = yargs(args).options(yargsOpts);
+  console.log(yargsOut.argv);
   return yargsOut;
 };
 

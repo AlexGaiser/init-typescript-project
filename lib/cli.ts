@@ -2,7 +2,6 @@
 
 import { exec } from 'child_process';
 import * as path from 'path';
-import defaultOptions from './configs/default.config';
 import packageJSONTemplate from './templates/package.json';
 import {
   copyDir,
@@ -43,7 +42,7 @@ devDependencies.forEach((dep) => {
   console.log(dep);
 });
 
-if (process.env.NO_INSTALL === 'true') {
+if (options.install !== true) {
   console.log('SKIPPING DEPENDENCY INSTALLATION, DEVELOPMENT ENV');
   process.exit();
 }

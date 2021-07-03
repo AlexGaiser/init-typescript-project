@@ -1,11 +1,16 @@
-export interface Options extends Object {
+export interface Options {
   name: string;
   projectDir: string;
   entryPoint: string;
   sourceDir: string;
+  install: boolean;
 }
 
-export interface ReadOnlyOptions extends Readonly<Options> {}
+export type PartialOpts = {
+  [Properties in keyof Options]?: Options[Properties];
+};
+
+export type ReadOnlyOptions = Readonly<Options>;
 
 export type OptionSetting = {
   type: 'boolean' | 'number' | 'string';

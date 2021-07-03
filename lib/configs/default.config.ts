@@ -9,6 +9,7 @@ const defaultOptions: ReadOnlyOptions = {
   projectDir: path.join(defaultPath),
   entryPoint: 'index',
   sourceDir: 'src',
+  install: true,
 };
 
 export default defaultOptions;

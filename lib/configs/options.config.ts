@@ -1,6 +1,6 @@
 import { OptionConfig } from '../types/types';
 
-const optionConfig: OptionConfig = <OptionConfig>{
+const optionConfig: OptionConfig = {
   name: {
     name: 'n',
     alias: 'name',
@@ -23,6 +23,12 @@ const optionConfig: OptionConfig = <OptionConfig>{
     name: 'sd',
     alias: 'srcDir',
     type: 'string',
+    demandOption: false,
+  },
+  install: {
+    name: 'install',
+    alias: 'install-deps',
+    type: 'boolean',
     demandOption: false,
   },
 };
