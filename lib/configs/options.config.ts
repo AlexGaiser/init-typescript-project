@@ -27,7 +27,7 @@ const optionConfig: OptionConfig = {
   },
   install: {
     name: 'install',
-    alias: 'install-deps',
+    alias: 'install',
     type: 'boolean',
     demandOption: false,
   },
