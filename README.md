@@ -6,10 +6,29 @@ A command line tool for initializing a custom typescript project. Builds a simpl
 
 This CLI tool is designed to quickly and simply initialize a typescript project and take away all the pain of setting up the boilerplate. The goal is to shave a minimum of 1 hour of set up time for any new project.
 
+## Installation 
+Run the following command from your terminal. 
+```bash
+$ npm i -g simplemkfile
 
-## Project initialization flow
+```
 
-I set up a lot of typescript projects from scratch and like a lot of Typescript users I find myself doing a lot of the same things over and each time. This project simulates the manual set up process by following the same flow. 
+However it is preferred to run the command using `npx`
+For example the following will work without a global install: 
+```bash
+$ npx simplemkfile test js
+```
+Using `npx` will ensure that you are always using the latest version of the CLI tool. 
+
+
+## How to Use:
+
+
+
+
+## Design Philosophy
+
+I have recently set up a lot of typescript projects from scratch and like a lot of Typescript users I found myself doing a lot of the same things over and each time. This project simulates the manual set up process by following the same flow. 
 
 ### This flow is: 
 
