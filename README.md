@@ -9,22 +9,31 @@ This CLI tool is designed to quickly and simply initialize a typescript project 
 ## Installation 
 Run the following command from your terminal. 
 ```bash
-$ npm i -g simplemkfile
+$ npm i -g init-typescript-project
 
 ```
 
 However it is preferred to run the command using `npx`
 For example the following will work without a global install: 
 ```bash
-$ npx simplemkfile test js
+$ npx init-typescript-project mynewproject
 ```
 Using `npx` will ensure that you are always using the latest version of the CLI tool. 
 
 
 ## How to Use:
+In your terminal run the following command:
+```bash
 
+$ init-typescript-project myapp
 
+# OR
 
+$ itp myapp
+
+```
+
+This command will initialize a typescript project in the current directory with the project name you specify.
 
 ## Design Philosophy
 
