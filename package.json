@@ -19,6 +19,7 @@
     "url": "git+https://github.com/AlexGaiser/init-typescript-project.git"
   },
   "bin": {
+    "init-typescript-project":"dist/cli.js",
     "itp": "dist/cli.js"
   },
   "keywords": [
